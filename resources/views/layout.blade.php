@@ -84,9 +84,9 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-						<li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Add Contact</span></a></li>
-						<li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> All Contact</span></a></li>
+						<li><a href="{{URL::to('/dashboard')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+						<li><a href="{{URL::to('/addcontact')}}"><i class="icon-envelope"></i><span class="hidden-tablet"> Add Contact</span></a></li>
+						<li><a href="{{URL::to('/allcontact')}}"><i class="icon-tasks"></i><span class="hidden-tablet"> All Contact</span></a></li>
 					</ul>
 				</div>
 			</div>

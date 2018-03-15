@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Pages routes Here
+
+Route::get('/addcontact', 'AdminController@addContact');
+
+Route::get('/allcontact', 'AdminController@allContact');
+
+Route::get('/dashboard', 'AdminController@dashboard');
