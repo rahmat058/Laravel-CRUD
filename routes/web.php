@@ -23,3 +23,5 @@ Route::get('/addcontact', 'AdminController@addContact');
 Route::get('/allcontact', 'AdminController@allContact');
 
 Route::get('/dashboard', 'AdminController@dashboard');
+
+Route::post('/save_contact', 'AdminController@saveContact');
