@@ -11,6 +11,15 @@
 							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
 						</div>
 					</div>
+          <p class='alert-success' style="font-size: 20px; color: white; background: #149278">
+             <?php
+                $message = Session::get('message');
+                if($message){
+                   echo $message;
+                   Session::put('message', null);
+                }
+             ?>
+          </p>
 					<div class="box-content">
 						<table class="table table-striped">
 							  <thead>
@@ -29,7 +38,7 @@
 									<td class="center">{{$allContact -> contact_number}}</td>
 									<td class="center">
 										<a href="#" class="btn btn-info">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="{{URL::to('/delete_contact/'.$allContact -> contact_id)}}" class="btn btn-danger">Delete</a>
 									</td>
 								</tr>
             @endforeach

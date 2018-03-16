@@ -42,6 +42,13 @@ class AdminController extends Controller
        return Redirect::to('/addcontact');
     }
 
-    // Data Read From Database
+    // Data Delete From Database
+    public function deleteContact($contact_id) {
+      DB::table('tbl_contact')
+           ->where ('contact_id', $contact_id)
+           ->delete();
 
+      Session::put('message', 'Delete Contact Successfully!!');
+      return Redirect::to('/allcontact');
+    }
 }

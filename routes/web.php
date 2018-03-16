@@ -25,3 +25,5 @@ Route::get('/allcontact', 'AdminController@allContact');
 Route::get('/dashboard', 'AdminController@dashboard');
 
 Route::post('/save_contact', 'AdminController@saveContact');
+
+Route::get('/delete_contact/{contact_id}', 'AdminController@deleteContact');
