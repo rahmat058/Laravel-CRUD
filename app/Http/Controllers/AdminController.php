@@ -15,13 +15,21 @@ class AdminController extends Controller
     }
 
     public function allContact() {
-      return view('allcontact');
+      $allContact =  DB::table('tbl_contact')
+          -> get();
+
+      $manage_contact = view('allcontact')
+           -> with ('allContactInfo',   $allContact);
+
+      return view('layout')
+           -> with('allcontact', $manage_contact);
     }
 
     public function dashboard() {
       return view('welcome');
     }
 
+    //Contact Added Part In Database
     public function saveContact(Request $request) {
 
        $data = array();
@@ -33,4 +41,7 @@ class AdminController extends Controller
        Session::put('message', 'Contact Added Successfullu!!');
        return Redirect::to('/addcontact');
     }
+
+    // Data Read From Database
+
 }
