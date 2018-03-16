@@ -37,7 +37,7 @@
 									<td class="center">{{$allContact -> contact_name}}</td>
 									<td class="center">{{$allContact -> contact_number}}</td>
 									<td class="center">
-										<a href="#" class="btn btn-info">Edit</a>
+										<a href="{{URL::to('/edit_contact/'.$allContact -> contact_id)}}" class="btn btn-info">Edit</a>
                     <a href="{{URL::to('/delete_contact/'.$allContact -> contact_id)}}" id="delete" class="btn btn-danger">Delete</a>
 									</td>
 								</tr>

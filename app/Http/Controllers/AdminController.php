@@ -51,4 +51,32 @@ class AdminController extends Controller
       Session::put('message', 'Delete Contact Successfully!!');
       return Redirect::to('/allcontact');
     }
+
+    // Data Edit From Database
+    public function editContact($contact_id) {
+      $contact_info = DB::table('tbl_contact')
+           ->where ('contact_id', $contact_id)
+           ->first();
+
+           $manage_contact = view('contact_edit')
+                -> with ('allContactInfo',   $contact_info);
+
+          return view('layout')
+                -> with('contact_edit', $manage_contact);
+    }
+
+      // Contact Update is here
+    public function contactUpdate(Request $request, $contact_id) {
+
+      $data = array();
+      $data['contact_name'] = $request->contact_name;
+      $data['contact_number'] = $request->contact_number;
+
+      DB::table('tbl_contact')
+           ->where ('contact_id', $contact_id)
+           ->update($data);
+
+      Session::put('message', 'Contact Update Successfully!!');
+      return Redirect::to('/allcontact');
+    }
 }

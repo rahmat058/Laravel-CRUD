@@ -215,7 +215,7 @@
 
 </body>
 
-
+<!-- BootBox Modal Code Start -->
 <script type="text/javascript">
        $(document).on("click", "#delete", function(e) {
          e.preventDefault();
